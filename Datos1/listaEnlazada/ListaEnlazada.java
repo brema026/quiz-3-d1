@@ -4,10 +4,20 @@ public class ListaEnlazada {
     NodoLista head = null;
 
     public void insertar(int dato) {
-        NodoLista Node = new NodoLista(dato);
-        Node.next = head;
-        head = Node;
+        NodoLista node = new NodoLista(dato);
+        node.next = head;
+        head = node;
+    }
 
+    public boolean contiene(int dato) {
+        NodoLista nodoActual = head;
+        while (nodoActual != null) {
+            if (nodoActual.dato == dato) {
+                return true;
+            }
+            nodoActual = nodoActual.next;
+        }
+        return false;
     }
 
     public void imprimirLista() {

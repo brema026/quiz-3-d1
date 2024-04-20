@@ -29,4 +29,20 @@ public class ArbolBinario {
             }
         }
     }
+    public NodoArbol buscar(int key) {
+        return buscarRec(raiz, key);
+    }
+
+    private NodoArbol buscarRec(NodoArbol nodo, int key) {
+        if (nodo == null || nodo.llave == key) {
+            return nodo;
+        }
+
+        if (key < nodo.llave) {
+            return buscarRec(nodo.izquierda, key);
+        } else {
+            return buscarRec(nodo.derecha, key);
+        }
+    }
 }
+
