@@ -9,7 +9,13 @@ public class main {
         Lista.insertar(4);
         Lista.insertar(3);
         Lista.insertar(2);
-
         Lista.imprimirLista();
+
+        Arbol.insertar(5,null);
+        Arbol.insertar(3,null);
+        Arbol.insertar(2,null);
+        Arbol.insertar(7,null);
+        Arbol.insertar(6,null);
+        Arbol.insertar(9,null);
     }
 }
