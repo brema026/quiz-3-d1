@@ -14,25 +14,22 @@ public class main {
         System.out.println("Run\tTiempo BST (ns)\tTiempo ListaEnlazada (ns)");
 
         for (int i = 1; i <= runs; i++) {
-            int[] elements = new int[1000]; // Cambia el tamaño del arreglo según necesites
+            int[] elements = new int[1000];
             for (int j = 0; j < elements.length; j++) {
-                elements[j] = random.nextInt(10000); // Genera números aleatorios para insertar
+                elements[j] = random.nextInt(10000);
             }
 
-            // Insertar elementos en ambas estructuras
             for (int element : elements) {
-                bst.insertar(element, null); // Pasamos null como valor ya que no estamos utilizando el valor en este caso
+                bst.insertar(element, null);
                 linkedList.insertar(element);
             }
 
-            // Búsqueda en árbol binario de búsqueda
-            int randomElement = elements[random.nextInt(elements.length)]; // Elemento aleatorio a buscar
+            int randomElement = elements[random.nextInt(elements.length)];
             startTime = System.nanoTime();
             bst.buscar(randomElement);
             endTime = System.nanoTime();
             long bstTime = endTime - startTime;
 
-            // Búsqueda secuencial en lista enlazada
             startTime = System.nanoTime();
             linkedList.contiene(randomElement);
             endTime = System.nanoTime();
